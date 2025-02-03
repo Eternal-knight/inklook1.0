@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@layer utilities {
+  .animate-fade-in-down {
+    animation: fadeInDown 1s ease-out;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
   }
 }
 
@@ -24,33 +23,14 @@
   }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 1s ease-out;
-}
-
-.animate-fade-in-down {
-  animation: fadeInDown 1s ease-out;
-}
-
-/* Ensure images are handled properly */
-.next-image-wrapper {
-  position: relative !important;
-}
-
-/* Add smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Improve button interactions */
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Ensure proper stacking context */
-.relative {
-  position: relative;
-  z-index: 1;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
